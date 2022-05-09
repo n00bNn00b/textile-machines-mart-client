@@ -31,10 +31,15 @@ const Register = () => {
     const name = e.target.formBasicText.value;
     const email = e.target.formBasicEmail.value;
     const password = e.target.formBasicPassword.value;
+    const confirmPassword = e.target.formConfirmPassword.value;
     // console.log(name, email, password);
-    await createUserWithEmailAndPassword(email, password);
-    await updateProfile({ displayName: name });
-    toast("Profile has been created!");
+    if (password !== confirmPassword) {
+      toast("Password Does not Match!");
+    } else {
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName: name });
+      toast("Profile has been created!");
+    }
   };
 
   return (
@@ -50,6 +55,9 @@ const Register = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formConfirmPassword">
+          <Form.Control type="password" placeholder="Confirm Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
