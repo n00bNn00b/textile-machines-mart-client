@@ -1,0 +1,3 @@
+banner-1: https://i.ibb.co/f1YtR7C/banner1.jpg
+banner-2: https://i.ibb.co/QnwMH28/banner2.jpg
+banner-3: https://i.ibb.co/c389h9k/banner3.png
