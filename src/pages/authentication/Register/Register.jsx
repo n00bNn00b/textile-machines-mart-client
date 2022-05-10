@@ -66,8 +66,12 @@ const Register = () => {
             label="Agree with terms and condition?"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button
+          style={{ backgroundColor: "rgb(70 129 104)" }}
+          className="d-block mx-auto w-25 text-white"
+          type="submit"
+        >
+          Register
         </Button>
       </Form>
     </div>
