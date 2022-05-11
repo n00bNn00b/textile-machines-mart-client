@@ -9,6 +9,7 @@ import ResetPassword from "./pages/authentication/ResetPassword/ResetPassword";
 import Inventory from "./pages/Inventory/Inventory";
 import Header from "./pages/SharedComponents/Header/Header";
 import Footer from "./pages/SharedComponents/Footer/Footer";
+import AddItem from "./pages/AddItem/AddItem";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/addItem" element={<AddItem />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/inventory" element={<Inventory />} />
       </Routes>

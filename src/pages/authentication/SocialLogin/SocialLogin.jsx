@@ -17,7 +17,7 @@ const SocialLogin = () => {
           className=" w-50"
         ></div>
       </div>
-      <h2>Social Login</h2>
+      <h2>Login With</h2>
     </div>
   );
 };

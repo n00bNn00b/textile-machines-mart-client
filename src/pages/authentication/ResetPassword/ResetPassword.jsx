@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 
@@ -19,6 +20,7 @@ const ResetPassword = () => {
     e.preventDefault();
     const email = e.target.formBasicEmail.value;
     const confirmEmail = e.target.formBasicConfirmEmail.value;
+    e.target.reset();
     if (email !== confirmEmail) {
       toast("Email does not match! Try again.");
     } else {
@@ -27,21 +29,35 @@ const ResetPassword = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container w-50">
       <h1 className="m-3 text-center">Reset Password</h1>
       <Form onSubmit={handleResetPassword}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" placeholder="Enter email" required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicConfirmEmail">
-          <Form.Control type="email" placeholder="Confirm email" />
+          <Form.Control type="email" placeholder="Confirm email" required />
         </Form.Group>
 
         <div className="text-center">
-          <Button variant="primary" type="submit">
+          <Button
+            className="border-0 my-3"
+            style={{ backgroundColor: "rgb(70 129 104)" }}
+            type="submit"
+          >
             Send Password Reset Email
           </Button>
+          <p>
+            <Button
+              className="border-0"
+              style={{ backgroundColor: "rgb(70 129 104)" }}
+              as={Link}
+              to="/"
+            >
+              Go Home
+            </Button>
+          </p>
         </div>
       </Form>
     </div>

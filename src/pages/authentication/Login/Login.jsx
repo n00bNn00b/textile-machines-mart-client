@@ -30,13 +30,14 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.formBasicEmail.value;
     const password = e.target.formBasicPassword.value;
+    e.target.reset();
     // console.log(password);
 
     await signInWithEmailAndPassword(email, password);
     navigate(from, { replace: true });
   };
   return (
-    <Container>
+    <Container className="w-50">
       <h1 className="m-3 text-center">Login</h1>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,7 +50,7 @@ const Login = () => {
 
         <Button
           style={{ backgroundColor: "rgb(70 129 104)" }}
-          className="w-25 border-0 p-2 mx-auto d-block text-white"
+          className="w-50 border-0 p-2 mx-auto d-block text-white"
           type="submit"
         >
           Login
