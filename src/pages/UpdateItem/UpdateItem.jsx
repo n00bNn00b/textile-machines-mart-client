@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Manage from "./Manage/Manage";
+import Update from "./Update/Update";
 
-const ManageInventory = () => {
+const UpdateItem = () => {
   const { id } = useParams();
   const [singleItem, setSingleItem] = useState([]);
   useEffect(() => {
@@ -13,9 +13,9 @@ const ManageInventory = () => {
   // console.log(singleItem);
   return (
     <div>
-      <Manage key={singleItem._id} singleItem={singleItem} />
+      <Update key={singleItem._id} singleItem={singleItem} />
     </div>
   );
 };
 
-export default ManageInventory;
+export default UpdateItem;

@@ -11,7 +11,7 @@ import Footer from "./pages/SharedComponents/Footer/Footer";
 import AddItem from "./pages/AddItem/AddItem";
 import MyItems from "./pages/MyItems/MyItems";
 import Full from "./pages/Full/Full";
-import ManageInventory from "./pages/ManageInventory/ManageInventory";
+import UpdateItem from "./pages/UpdateItem/UpdateItem";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/addItem" element={<AddItem />} />
-        <Route path="/manageInventory/:id" element={<ManageInventory />} />
+        <Route path="/updateItem/:id" element={<UpdateItem />} />
         <Route path="/myItems" element={<MyItems />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/full" element={<Full />} />

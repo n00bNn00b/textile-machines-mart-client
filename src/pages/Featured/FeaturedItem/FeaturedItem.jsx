@@ -34,7 +34,7 @@ const FeaturedItem = ({ featured }) => {
           {user && (
             <Button
               as={Link}
-              to={`/manageInventory/${_id}`}
+              to={`/updateItem/${_id}`}
               style={{ backgroundColor: "rgb(70 129 104)" }}
               className="d-block mx-auto border-0"
             >

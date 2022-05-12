@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 
-const Manage = ({ singleItem }) => {
+const Update = ({ singleItem }) => {
   const { name, quantity } = singleItem;
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
@@ -42,4 +42,4 @@ const Manage = ({ singleItem }) => {
   );
 };
 
-export default Manage;
+export default Update;
