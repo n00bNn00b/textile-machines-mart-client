@@ -12,7 +12,7 @@ import auth from "../../../firebase.init";
 
 const FeaturedItem = ({ featured }) => {
   const [user] = useAuthState(auth);
-  const { name, price, img, description, supplier, quantity } = featured;
+  const { _id, name, price, img, description, supplier, quantity } = featured;
   return (
     <Container>
       <Card style={{ width: "18rem" }}>
@@ -34,7 +34,7 @@ const FeaturedItem = ({ featured }) => {
           {user && (
             <Button
               as={Link}
-              to="/manageInventory"
+              to={`/manageInventory/${_id}`}
               style={{ backgroundColor: "rgb(70 129 104)" }}
               className="d-block mx-auto border-0"
             >

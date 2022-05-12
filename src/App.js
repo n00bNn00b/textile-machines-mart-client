@@ -24,7 +24,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/addItem" element={<AddItem />} />
-        <Route path="/manageInventory" element={<ManageInventory />} />
+        <Route path="/manageInventory/:id" element={<ManageInventory />} />
         <Route path="/myItems" element={<MyItems />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/full" element={<Full />} />

@@ -7,12 +7,13 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Product = ({ product }) => {
+  const { id } = useParams();
   const [user] = useAuthState(auth);
-  const { name, supplier, price, quantity, description, img } = product;
+  const { _id, name, supplier, price, quantity, description, img } = product;
   return (
     <Container>
       <Card style={{ width: "18rem" }}>
@@ -34,7 +35,7 @@ const Product = ({ product }) => {
           {user && (
             <Button
               as={Link}
-              to="/manageInventory"
+              to={`/manageInventory/${_id}`}
               style={{ backgroundColor: "rgb(70 129 104)" }}
               className="d-block mx-auto border-0"
             >
