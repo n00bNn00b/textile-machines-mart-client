@@ -7,6 +7,7 @@ import auth from "../../../firebase.init";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+
   const handleLogout = () => {
     signOut(auth);
   };
@@ -25,9 +26,14 @@ const Header = () => {
             <Nav.Link as={Link} to="/home#featured">
               Featured Items
             </Nav.Link>
-            <Nav.Link as={Link} to="/inventory">
-              Inventory
+            <Nav.Link as={Link} to="/full">
+              Full Item List
             </Nav.Link>
+            {user && (
+              <Nav.Link as={Link} to="/manageInventory">
+                Manage Inventory
+              </Nav.Link>
+            )}
             {user && (
               <Nav.Link as={Link} to="/addItem">
                 Add Item
@@ -37,17 +43,13 @@ const Header = () => {
           <Nav>
             {user && (
               <NavDropdown title="Personal Section" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/myItems">
                   My Added Items
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Change Email
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#">Change Email</NavDropdown.Item>
                 {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item href="#action/3.4">
-                  Change Password
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#">Change Password</NavDropdown.Item>
               </NavDropdown>
             )}
           </Nav>

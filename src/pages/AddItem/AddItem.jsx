@@ -1,8 +1,14 @@
 import axios from "axios";
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+  // console.log(user);
+  const email = user.email;
   const handleAddItem = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -12,19 +18,21 @@ const AddItem = () => {
     const supplier = e.target.supplier.value;
     const quantity = e.target.quantity.value;
     e.target.reset();
-    console.log(name, price, img, description, supplier, quantity);
+    // console.log(name, price, img, description, supplier, quantity);
     const url = `http://localhost:5000/products`;
     axios
       .post(url, {
         name,
-        price,
-        img,
-        description,
         supplier,
+        price,
         quantity,
+        description,
+        img,
+        email,
       })
       .then((res) => console.log("post data: ", res))
       .catch((err) => console.log(err));
+    toast("Item Added Successfully!");
   };
 
   return (
