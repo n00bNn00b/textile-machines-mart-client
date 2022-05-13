@@ -12,7 +12,7 @@ const MyItems = () => {
   useEffect(() => {
     const url = `http://localhost:5000/addedByUser?email=${email}`;
     axios.get(url).then((res) => setUserItems(res?.data));
-  }, [email]);
+  }, [userItems]);
 
   return (
     <Container>

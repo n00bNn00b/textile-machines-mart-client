@@ -38,7 +38,7 @@ const FeaturedItem = ({ featured }) => {
               style={{ backgroundColor: "rgb(70 129 104)" }}
               className="d-block mx-auto border-0"
             >
-              Manage
+              Update
             </Button>
           )}
         </Card.Body>

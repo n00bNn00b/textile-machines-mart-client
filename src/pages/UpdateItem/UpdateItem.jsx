@@ -9,7 +9,7 @@ const UpdateItem = () => {
   useEffect(() => {
     const url = `http://localhost:5000/product/${id}`;
     axios.get(url).then((res) => setSingleItem(res.data));
-  }, []);
+  }, [id]);
   // console.log(singleItem);
   return (
     <div>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {
   Button,
@@ -35,7 +36,9 @@ const MyItem = ({ userItem }) => {
   };
   // delete button handler
   const deleteHandler = () => {
-    console.log("Delete WOrking!");
+    axios
+      .delete(`http://localhost:5000/product/${_id}`)
+      .then((res) => console.log(res));
   };
   return (
     <Container className="row">
@@ -71,7 +74,6 @@ const MyItem = ({ userItem }) => {
 
             <Button
               onClick={deleteHandler}
-              type="submit"
               className="d-flex mx-auto bg-danger border-0"
             >
               Delete Product

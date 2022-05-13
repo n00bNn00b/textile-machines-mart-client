@@ -1,9 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 const Update = ({ singleItem }) => {
-  const { name, quantity } = singleItem;
+  const { _id, name, quantity } = singleItem;
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
   // delivery handler
@@ -13,6 +14,11 @@ const Update = ({ singleItem }) => {
     } else if (itemQuantity > 0) {
       setItemQuantity(itemQuantity - 1);
     }
+    axios
+      .put(`http://localhost:5000/product/${_id}`, {
+        quantity: itemQuantity - 1,
+      })
+      .then((res) => console.log(res));
   };
 
   // restock handler
@@ -24,6 +30,11 @@ const Update = ({ singleItem }) => {
     } else {
       setItemQuantity(parseInt(restock + itemQuantity));
     }
+    axios
+      .put(`http://localhost:5000/product/${_id}`, {
+        quantity: restock + itemQuantity,
+      })
+      .then((res) => console.log(res));
   };
   return (
     <Container>
