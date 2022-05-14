@@ -7,10 +7,12 @@ import {
   Form,
   ListGroup,
   ListGroupItem,
+  Modal,
 } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 const MyItem = ({ userItem }) => {
+  const [show, setShow] = useState(false);
   const { _id, name, img, description, price, supplier, quantity } = userItem;
   //  quantity state
   const [productQuantity, setProductQuantity] = useState(quantity);
@@ -18,11 +20,11 @@ const MyItem = ({ userItem }) => {
   // deliver button handler
   const handleDeliver = (e) => {
     e.preventDefault();
-    const deliverCount = e.target.deliverCounter.value;
+    const deliverCount = parseInt(e.target.deliverCounter.value);
 
     if (productQuantity < 1) {
       toast("Please restock few more items.");
-    } else if (productQuantity >= deliverCount) {
+    } else if (productQuantity >= deliverCount && deliverCount > 0) {
       const remaining = parseInt(productQuantity - deliverCount);
       setProductQuantity(remaining);
       axios
@@ -31,7 +33,7 @@ const MyItem = ({ userItem }) => {
         })
         .then((res) => console.log(res));
       toast(deliverCount + " " + name + " is on delivery!");
-    } else if (deliverCount === 0) {
+    } else if (deliverCount === 0 || deliverCount <= 0) {
       toast("please input item more than 0.");
     } else {
       toast("Sorry! you do not have sufficient product to deliver.");
@@ -43,7 +45,6 @@ const MyItem = ({ userItem }) => {
   const restockHandler = (e) => {
     e.preventDefault();
     const restock = parseInt(e.target.restock.value);
-    setProductQuantity(restock + productQuantity);
     console.log(restock);
     if (restock === 0 || restock <= 0) {
       toast("Please enter valid number of product");
@@ -53,18 +54,27 @@ const MyItem = ({ userItem }) => {
           quantity: productQuantity + restock,
         })
         .then((res) => console.log(res));
+      setProductQuantity(parseInt(restock + productQuantity));
     }
     e.target.reset();
   };
 
   // delete button handler
   const deleteHandler = () => {
+    setShow(true);
+  };
+  const deleteConfirm = () => {
     axios
       .delete(`http://localhost:5000/product/${_id}`)
       .then((res) => console.log(res));
+    toast("Item deleted Successfully!");
+    setShow(false);
+  };
+  const noDeleteHandler = () => {
+    setShow(false);
   };
   return (
-    <Container className="row">
+    <Container className="row pb-5 mb-5">
       <div className="col">
         <Card className="d-block mx-auto mt-3" style={{ width: "18rem" }}>
           <Card.Img variant="top" src={img} />
@@ -118,6 +128,33 @@ const MyItem = ({ userItem }) => {
             >
               Delete Product
             </Button>
+            <Modal
+              show={show}
+              onHide={() => setShow(false)}
+              dialogClassName="modal-90w"
+              aria-labelledby="example-custom-modal-styling-title"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="example-custom-modal-styling-title">
+                  Are You Sure to Remove this item?
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Button
+                  onClick={deleteConfirm}
+                  className="bg-danger border-0 mx-5"
+                >
+                  Yes
+                </Button>
+                <Button
+                  className="border-0"
+                  style={{ backgroundColor: "rgb(70 129 104)" }}
+                  onClick={noDeleteHandler}
+                >
+                  No
+                </Button>
+              </Modal.Body>
+            </Modal>
           </Card.Body>
         </Card>
       </div>

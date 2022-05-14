@@ -11,8 +11,8 @@ const Full = () => {
   }, []);
   // console.log(products);
   return (
-    <Container>
-      <h2>Full Item List</h2>
+    <Container className="mt-5">
+      <h2 className="text-center pt-3">Full Item List</h2>
       <div className="row">
         {products.map((product) => (
           <div key={product._id} className="col my-3">

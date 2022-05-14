@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 
 import {
   useCreateUserWithEmailAndPassword,
@@ -26,6 +26,9 @@ const Register = () => {
   if (user) {
     navigate("/");
   }
+  if (error || errorProfile) {
+    toast(error.message || errorProfile.message);
+  }
   // register form function
 
   const handleRegister = async (e) => {
@@ -46,8 +49,8 @@ const Register = () => {
   };
 
   return (
-    <div className="container w-50">
-      <h1 className="m-3 text-center">Register</h1>
+    <Container>
+      <h1 className="m-3 text-center mt-5">Register</h1>
       <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control type="text" placeholder="Enter Your Name" required />
@@ -99,7 +102,7 @@ const Register = () => {
         </p>
         <SocialLogin />
       </div>
-    </div>
+    </Container>
   );
 };
 

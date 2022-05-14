@@ -12,7 +12,7 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar fixed="top" bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Textile Machines' Mart
@@ -23,17 +23,18 @@ const Header = () => {
             <Nav.Link as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/home#featured">
-              Featured Items
-            </Nav.Link>
+            <Nav.Link href="/home#featured">Featured Items</Nav.Link>
             <Nav.Link as={Link} to="/full">
               Full Item List
             </Nav.Link>
-            {user && (
-              <Nav.Link as={Link} to="/manageInventory">
-                Manage Inventory
-              </Nav.Link>
-            )}
+
+            <Nav.Link as={Link} to="/manageInventory">
+              Manage Inventory
+            </Nav.Link>
+            <Nav.Link as={Link} to="/manageInventory">
+              Blogs
+            </Nav.Link>
+
             {user && (
               <Nav.Link as={Link} to="/addItem">
                 Add Item
@@ -43,13 +44,13 @@ const Header = () => {
           <Nav>
             {user && (
               <NavDropdown title="Personal Section" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/profile">
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/myItems">
                   My Added Items
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">Change Email</NavDropdown.Item>
                 {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item href="#">Change Password</NavDropdown.Item>
               </NavDropdown>
             )}
           </Nav>

@@ -8,6 +8,7 @@ import {
   ListGroup,
   ListGroupItem,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Update = ({ singleItem }) => {
@@ -85,6 +86,14 @@ const Update = ({ singleItem }) => {
           </Form>
         </Card.Body>
       </Card>
+      <Button
+        as={Link}
+        to="/manageInventory"
+        className="d-block mx-auto border-0 mt-2 w-25 mt-5"
+        style={{ backgroundColor: "rgb(70 129 104)" }}
+      >
+        Manage Inventory
+      </Button>
     </Container>
   );
 };

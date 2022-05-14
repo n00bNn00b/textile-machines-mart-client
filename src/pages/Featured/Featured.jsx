@@ -11,16 +11,18 @@ const Featured = () => {
   }, []);
 
   return (
-    <Container id="featured">
-      <h2 className="text-center">Featured Items</h2>
-      <div className="row">
-        {featureds.slice(0, 6).map((featured) => (
-          <div key={featured._id} className="col my-3">
-            <FeaturedItem featured={featured} />
-          </div>
-        ))}
-      </div>
-    </Container>
+    <div id="featured">
+      <Container>
+        <h2 className="text-center">Featured Items</h2>
+        <div className="row">
+          {featureds.slice(0, 6).map((featured) => (
+            <div key={featured._id} className="col my-3">
+              <FeaturedItem featured={featured} />
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../SharedComponents/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -14,15 +15,16 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  let errorMessage;
+  // let errorMessage;
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
-  if (error) {
-    <div className="text-danger">{(errorMessage = error.message)}</div>;
-  }
+
   if (loading) {
     <Loading />;
+  }
+  if (error) {
+    toast("Wrong Email/Password! Please try again");
   }
 
   // login function
@@ -32,13 +34,12 @@ const Login = () => {
     const password = e.target.formBasicPassword.value;
     e.target.reset();
     // console.log(password);
-
     await signInWithEmailAndPassword(email, password);
-    navigate(from, { replace: true });
+    //
   };
   return (
-    <Container className="w-50">
-      <h1 className="m-3 text-center">Login</h1>
+    <Container className="w-50 mt-5">
+      <h1 className="my-3 text-center">Login</h1>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" required />
@@ -56,7 +57,7 @@ const Login = () => {
           Login
         </Button>
       </Form>
-      {errorMessage}
+
       {/* password reset div */}
 
       <div className="text-center p-3">

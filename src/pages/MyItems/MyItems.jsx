@@ -8,6 +8,7 @@ import MyItem from "../MyItem/MyItem";
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
+  // console.log(user);
   const [userItems, setUserItems] = useState([]);
   useEffect(() => {
     const url = `http://localhost:5000/addedByUser?email=${email}`;
@@ -15,8 +16,8 @@ const MyItems = () => {
   }, [userItems]);
 
   return (
-    <Container>
-      <h2 className="text-center">My Items</h2>
+    <Container className="mt-5">
+      <h2 className="text-center pt-3">My Items</h2>
       {userItems.map((userItem) => (
         <MyItem key={userItem._id} userItem={userItem} />
       ))}

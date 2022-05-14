@@ -12,6 +12,10 @@ import AddItem from "./pages/AddItem/AddItem";
 import MyItems from "./pages/MyItems/MyItems";
 import Full from "./pages/Full/Full";
 import UpdateItem from "./pages/UpdateItem/UpdateItem";
+import ManageInventory from "./pages/ManageInventory/ManageInventory";
+import RequireAuth from "./pages/authentication/RequireAuth/RequireAuth";
+import Profile from "./pages/Profile/Profile";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -23,11 +27,43 @@ function App() {
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/addItem" element={<AddItem />} />
-        <Route path="/updateItem/:id" element={<UpdateItem />} />
+        <Route
+          path="/addItem"
+          element={
+            <RequireAuth>
+              <AddItem />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/updateItem/:id"
+          element={
+            <RequireAuth>
+              <UpdateItem />
+            </RequireAuth>
+          }
+        />
         <Route path="/myItems" element={<MyItems />} />
+        <Route
+          path="/manageInventory"
+          element={
+            <RequireAuth>
+              <ManageInventory />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <Profile />
+            </RequireAuth>
+          }
+        />
+
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/full" element={<Full />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />
