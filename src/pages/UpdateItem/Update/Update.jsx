@@ -51,8 +51,8 @@ const Update = ({ singleItem }) => {
     <Container className="mt-5">
       <h2 className="text-center py-3">Update Item</h2>
 
-      <Card className="d-block mx-auto" style={{ width: "18rem" }}>
-        <Card.Img height="250px" variant="top" src={img} />
+      <Card className="d-block mx-auto" style={{ width: "20rem" }}>
+        <Card.Img className="p-2" height="250px" variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>Short Description: {description}</Card.Text>

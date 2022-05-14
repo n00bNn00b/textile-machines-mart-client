@@ -14,6 +14,7 @@ const Product = ({ product }) => {
     <Container className="mb-5">
       <Card style={{ width: "18rem", height: "36rem" }}>
         <Card.Img
+          className="p-2"
           style={{ height: "180px", width: "285px" }}
           variant="top"
           src={img}
