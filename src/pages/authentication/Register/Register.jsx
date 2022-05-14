@@ -49,8 +49,8 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <h1 className="m-3 text-center mt-5">Register</h1>
+    <Container className="mt-5">
+      <h1 className="m-3 text-center mt-5 pt-5">Register</h1>
       <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control type="text" placeholder="Enter Your Name" required />

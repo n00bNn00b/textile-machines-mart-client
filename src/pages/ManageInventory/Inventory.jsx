@@ -24,8 +24,8 @@ const Inventory = ({ inventory }) => {
     setShow(false);
   };
   return (
-    <Container>
-      <Table striped bordered hover>
+    <Container className="pt-3">
+      <Table striped bordered hover className="mt-2">
         <thead>
           <tr>
             <th>Image</th>
@@ -48,7 +48,10 @@ const Inventory = ({ inventory }) => {
             <td>{quantity}</td>
             <td>{price}</td>
             <td>
-              <Button onClick={deleteHandler} className="bg-danger border-0">
+              <Button
+                onClick={deleteHandler}
+                className="bg-danger border-0  rounded-pill d-block mx-auto me-0"
+              >
                 <img
                   src="https://www.svgrepo.com/show/378902/trash-bin.svg"
                   alt=""

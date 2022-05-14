@@ -48,7 +48,7 @@ const Update = ({ singleItem }) => {
     toast(restock + " item restocked.");
   };
   return (
-    <Container>
+    <Container className="mt-5">
       <h2 className="text-center py-3">Update Item</h2>
 
       <Card className="d-block mx-auto" style={{ width: "18rem" }}>

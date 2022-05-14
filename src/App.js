@@ -16,6 +16,7 @@ import ManageInventory from "./pages/ManageInventory/ManageInventory";
 import RequireAuth from "./pages/authentication/RequireAuth/RequireAuth";
 import Profile from "./pages/Profile/Profile";
 import NotFound from "./pages/NotFound/NotFound";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
 
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/full" element={<Full />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

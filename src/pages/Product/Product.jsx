@@ -12,7 +12,7 @@ const Product = ({ product }) => {
   const { _id, name, supplier, price, quantity, description, img } = product;
   return (
     <Container className="mb-5">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem", height: "36rem" }}>
         <Card.Img
           style={{ height: "180px", width: "285px" }}
           variant="top"
@@ -27,7 +27,7 @@ const Product = ({ product }) => {
           <ListGroupItem>Quantity: {quantity}</ListGroupItem>
           <ListGroupItem>Price: ${price}</ListGroupItem>
         </ListGroup>
-        <Card.Body>
+        <Card.Body className="mt-5">
           <Button
             as={Link}
             to={`/updateItem/${_id}`}

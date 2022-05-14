@@ -12,7 +12,7 @@ const FeaturedItem = ({ featured }) => {
   const { _id, name, price, img, description, supplier, quantity } = featured;
   return (
     <Container id="featured" className="mb-5">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem", height: "36rem" }}>
         <Card.Img
           style={{ height: "180px", width: "285px" }}
           variant="top"
@@ -27,12 +27,12 @@ const FeaturedItem = ({ featured }) => {
           <ListGroupItem>Quanity: {quantity}</ListGroupItem>
           <ListGroupItem>Price: ${price} </ListGroupItem>
         </ListGroup>
-        <Card.Body>
+        <Card.Body className="pb-0">
           <Button
             as={Link}
             to={`/updateItem/${_id}`}
             style={{ backgroundColor: "rgb(70 129 104)" }}
-            className="d-block mx-auto border-0"
+            className="d-block mx-auto border-0 mt-5"
           >
             Update
           </Button>

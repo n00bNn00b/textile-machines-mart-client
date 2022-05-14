@@ -1,9 +1,11 @@
+import axios from "axios";
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import useJwtToken from "../../../hook/useJwtToken";
 import Loading from "../../SharedComponents/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -15,8 +17,10 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
+  const [token] = useJwtToken(user);
+
   // let errorMessage;
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 
@@ -35,11 +39,14 @@ const Login = () => {
     e.target.reset();
     // console.log(password);
     await signInWithEmailAndPassword(email, password);
+
     //
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
   };
   return (
     <Container className="w-50 mt-5">
-      <h1 className="my-3 text-center">Login</h1>
+      <h1 className="my-3 text-center pt-5">Login</h1>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" required />

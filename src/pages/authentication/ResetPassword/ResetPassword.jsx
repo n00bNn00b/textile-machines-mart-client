@@ -1,13 +1,14 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 
 const ResetPassword = () => {
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
+  const navigate = useNavigate();
 
   if (error) {
     toast("User not found!");
@@ -26,11 +27,12 @@ const ResetPassword = () => {
     } else {
       await sendPasswordResetEmail(email);
       toast("Password reset link sent!");
+      navigate("/login");
     }
   };
   return (
-    <div className="container w-50">
-      <h1 className="m-3 text-center">Reset Password</h1>
+    <div className="container w-50 mt-5">
+      <h1 className="m-3 text-center pt-5">Reset Password</h1>
       <Form onSubmit={handleResetPassword}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" required />
