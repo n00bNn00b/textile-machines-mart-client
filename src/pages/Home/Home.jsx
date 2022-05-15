@@ -16,9 +16,9 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <About />
-      {loading ? <Loading loading={loading} /> : <Featured />}
 
+      {loading ? <Loading loading={loading} /> : <Featured />}
+      <About />
       <ContactUs />
     </div>
   );
