@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <Container className="mt-5 text-center">
-      <h2 className="text-center py-3">Profile</h2>
+      <h2 className="text-center py-5">Profile</h2>
       <Card className=" d-block mx-auto" style={{ width: "30rem" }}>
         <Card.Img
           className="w-75 d-block mx-auto mt-2"

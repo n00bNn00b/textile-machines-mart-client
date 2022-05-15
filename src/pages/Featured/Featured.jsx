@@ -13,7 +13,7 @@ const Featured = () => {
   return (
     <div id="featured">
       <Container>
-        <h2 className="text-center">Featured Items</h2>
+        <h2 className="text-center pt-3">Featured Items</h2>
         <div className="row">
           {featureds.slice(0, 6).map((featured) => (
             <div key={featured._id} className="col my-3">

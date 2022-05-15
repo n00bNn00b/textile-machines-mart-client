@@ -15,12 +15,16 @@ const Header = () => {
     <Navbar fixed="top" bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Textile Machines' Mart
+          <img
+            style={{ width: "80px", height: "50px", borderRadius: "10px" }}
+            src="https://i.ibb.co/h87VwNh/logo.png"
+            alt="Textile Machines' Mart"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/home">
+            <Nav.Link className="outline-success" as={Link} to="/home">
               Home
             </Nav.Link>
             <Nav.Link href="/home#featured">Featured Items</Nav.Link>

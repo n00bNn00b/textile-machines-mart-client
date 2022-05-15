@@ -1,12 +1,10 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import { FadeLoader } from "react-spinners";
 
 const Loading = () => {
   return (
-    <div className="text-center">
-      <Spinner animation="grow" variant="primary" />
-      <Spinner animation="grow" variant="warning" />
-      <Spinner animation="grow" variant="success" />
+    <div className="text-center mt-5 pt-5">
+      <FadeLoader color="rgb(70, 129, 104)" size={150} />
     </div>
   );
 };
