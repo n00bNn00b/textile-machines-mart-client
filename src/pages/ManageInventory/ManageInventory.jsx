@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Inventory from "./Inventory";
 
 const ManageInventory = () => {
@@ -16,6 +17,15 @@ const ManageInventory = () => {
     <Container className="pb-5">
       <div>
         <h2 className="text-center mt-5 pt-5">Manage Inventory</h2>
+        <Button
+          className="border-0 ms-3"
+          style={{ backgroundColor: "rgb(70, 129, 104)" }}
+          as={Link}
+          to="/addItem"
+        >
+          {" "}
+          Add New Item
+        </Button>
         <div>
           {inventories.map((inventory) => (
             <Inventory key={inventory._id} inventory={inventory} />

@@ -1,4 +1,6 @@
 import React from "react";
+import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -14,16 +16,16 @@ const Footer = () => {
       </div>
       <div className="mt-2">
         <h6>
-          {" "}
-          <a
-            style={{ textDecoration: "none" }}
-            className="text-white me-2"
-            href="/about"
-          >
-            {" "}
-            About Us
-          </a>{" "}
-        </h6>
+          <Nav>
+            <Nav.Link className="text-white me-2" as={Link} to="/about">
+              About Us
+            </Nav.Link>
+
+            <Nav.Link className="text-white me-2" as={Link} to="/contactus">
+              Contact Us
+            </Nav.Link>
+          </Nav>
+        </h6>{" "}
       </div>
     </div>
   );

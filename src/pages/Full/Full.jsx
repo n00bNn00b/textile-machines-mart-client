@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Product from "../Product/Product";
 import Loading from "../SharedComponents/Loading/Loading";
 
@@ -17,7 +18,7 @@ const Full = () => {
   }, []);
   // console.log(products);
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 pb-3 w-100">
       <h2 className="text-center pt-5">Full Item List</h2>
       {loading ? (
         <Loading loading={loading} />
@@ -30,6 +31,14 @@ const Full = () => {
           ))}
         </div>
       )}
+      <Button
+        style={{ backgroundColor: "rgb(70, 129, 104)" }}
+        as={Link}
+        to="/manageInventory"
+        className="d-block mx-auto w-25 border-0 mb-5"
+      >
+        Manage Inventory
+      </Button>
     </Container>
   );
 };

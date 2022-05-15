@@ -6,7 +6,11 @@ const NotFound = () => {
   return (
     <Container className="mt-5">
       <div className="pt-5">
-        <img src="https://i.ibb.co/3fvkmps/404.webp" alt="not found" />
+        <img
+          className="d-block mx-auto"
+          src="https://i.ibb.co/3fvkmps/404.webp"
+          alt="not found"
+        />
         <p>
           <h1 className="text-center">The Requested Content Was not Found!</h1>
         </p>

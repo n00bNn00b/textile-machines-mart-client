@@ -59,7 +59,7 @@ const SocialLogin = () => {
       <Button
         onClick={googleSignInHandler}
         style={{ backgroundColor: "rgb(70 129 104)" }}
-        className="w-50 border-0 my-3"
+        className="w-25 border-0 my-3"
       >
         <img
           className="w-25"
@@ -71,7 +71,7 @@ const SocialLogin = () => {
       <Button
         onClick={gitHubSignInHandler}
         style={{ backgroundColor: "rgb(70 129 104)" }}
-        className="w-50 border-0"
+        className="w-25 border-0"
       >
         <img
           className="w-25"
