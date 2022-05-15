@@ -15,7 +15,7 @@ const MyItem = ({ userItem }) => {
   const [show, setShow] = useState(false);
   const { _id, name, img, description, price, supplier, quantity } = userItem;
   //  quantity state
-  const [productQuantity, setProductQuantity] = useState(quantity);
+  const [productQuantity, setProductQuantity] = useState(parseInt(quantity));
 
   // deliver button handler
   const handleDeliver = (e) => {
@@ -45,16 +45,17 @@ const MyItem = ({ userItem }) => {
   const restockHandler = (e) => {
     e.preventDefault();
     const restock = parseInt(e.target.restock.value);
-    console.log(restock);
+    console.log(typeof restock);
     if (restock === 0 || restock <= 0) {
       toast("Please enter valid number of product");
     } else {
+      const totalQuantity = parseInt(productQuantity + restock);
       axios
         .put(`http://localhost:5000/product/${_id}`, {
-          quantity: parseInt(productQuantity + restock),
+          quantity: parseInt(totalQuantity),
         })
         .then((res) => console.log(res));
-      setProductQuantity(parseInt(restock + productQuantity));
+      parseInt(setProductQuantity(parseInt(totalQuantity)));
     }
     e.target.reset();
   };

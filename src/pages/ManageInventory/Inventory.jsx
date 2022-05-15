@@ -39,7 +39,7 @@ const Inventory = ({ inventory }) => {
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td width="100px">
               <img width="100px" src={img} alt="textile-machine" />
             </td>
             <td>{name}</td>
