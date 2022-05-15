@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { FadeLoader } from "react-spinners";
 import Product from "../Product/Product";
 import Loading from "../SharedComponents/Loading/Loading";
 

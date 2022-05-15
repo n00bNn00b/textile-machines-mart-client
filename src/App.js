@@ -17,6 +17,8 @@ import RequireAuth from "./pages/authentication/RequireAuth/RequireAuth";
 import Profile from "./pages/Profile/Profile";
 import NotFound from "./pages/NotFound/NotFound";
 import Blog from "./pages/Blog/Blog";
+import ContactUs from "./pages/ContactUs/ContactUs";
+import About from "./pages/About/About";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -65,6 +68,7 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/full" element={<Full />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/contactus" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
