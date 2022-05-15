@@ -56,7 +56,9 @@ const MyItem = ({ userItem }) => {
         })
         .then((res) => console.log(res));
       parseInt(setProductQuantity(parseInt(totalQuantity)));
+      toast(restock + " item has been restocked!");
     }
+
     e.target.reset();
   };
 
@@ -75,7 +77,7 @@ const MyItem = ({ userItem }) => {
     setShow(false);
   };
   return (
-    <Container className="row pb-5 mb-5">
+    <Container className="row pb-5 mb-5 pb-5">
       <div className="col">
         <Card className="d-block mx-auto mt-3" style={{ width: "18rem" }}>
           <Card.Img variant="top" src={img} />
@@ -148,7 +150,7 @@ const MyItem = ({ userItem }) => {
                   Yes
                 </Button>
                 <Button
-                  className="border-0"
+                  className="border-0 "
                   style={{ backgroundColor: "rgb(70 129 104)" }}
                   onClick={noDeleteHandler}
                 >

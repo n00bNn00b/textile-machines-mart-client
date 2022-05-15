@@ -16,7 +16,7 @@ const MyItems = () => {
   }, [userItems]);
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 mb-5 pb-5">
       <h2 className="text-center pt-5">My Items</h2>
       {userItems.map((userItem) => (
         <MyItem key={userItem._id} userItem={userItem} />
