@@ -51,7 +51,7 @@ const MyItem = ({ userItem }) => {
     } else {
       axios
         .put(`http://localhost:5000/product/${_id}`, {
-          quantity: productQuantity + restock,
+          quantity: parseInt(productQuantity + restock),
         })
         .then((res) => console.log(res));
       setProductQuantity(parseInt(restock + productQuantity));

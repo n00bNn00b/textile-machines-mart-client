@@ -89,7 +89,7 @@ const Update = ({ singleItem }) => {
       <Button
         as={Link}
         to="/manageInventory"
-        className="d-block mx-auto border-0 mt-2 w-25 mt-5"
+        className="d-block mx-auto border-0 mt-2 w-25 mb-5"
         style={{ backgroundColor: "rgb(70 129 104)" }}
       >
         Manage Inventory
