@@ -45,7 +45,7 @@ const Login = () => {
     localStorage.setItem("accessToken", data.accessToken);
   };
   return (
-    <Container className="w-50 mt-5">
+    <Container className=" mt-5">
       <h1 className="my-3 text-center pt-5">Login</h1>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

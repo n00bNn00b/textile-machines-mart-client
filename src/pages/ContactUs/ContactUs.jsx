@@ -27,7 +27,7 @@ const ContactUs = () => {
     toast("Your message has been sent!");
   };
   return (
-    <Container className="mt-5 pt-5 w-50 pb-5">
+    <Container className="mt-5 pt-5 w-50 mb-5 pb-5">
       <Form ref={form} onSubmit={sendEmailHandler} className="pb-5">
         <h2 className="text-center">Contact Us</h2>
         <p className="text-center">

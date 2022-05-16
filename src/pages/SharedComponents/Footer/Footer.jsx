@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div
-      style={{ backgroundColor: "rgb(70, 129, 104)", height: "50px" }}
-      className="fixed-bottom mt-5 pb-5 d-flex justify-content-between"
+    <footer
+      style={{ backgroundColor: "rgb(70, 129, 104)", height: "70px" }}
+      className="fixed-bottom row mt-5 pb-5 d-flex justify-content-between"
     >
-      <div>
-        <h5 className="ms-2 mt-2 text-white ">
-          &copy; {year} | All Rights Reserved{" "}
-        </h5>
+      <div className="col-md-6 col-sm-12">
+        <h6 className="ms-2 mt-2 text-white ">
+          <small>&copy; {year} | All Rights Reserved </small>
+        </h6>
       </div>
-      <div className="mt-2">
+      <div className="mt-2 col-md-6 col-sm-12">
         <h6>
           <Nav>
             <Nav.Link className="text-white me-2" as={Link} to="/about">
@@ -27,7 +27,7 @@ const Footer = () => {
           </Nav>
         </h6>{" "}
       </div>
-    </div>
+    </footer>
   );
 };
 
