@@ -28,7 +28,7 @@ const MyItem = ({ userItem }) => {
       const remaining = parseInt(productQuantity - deliverCount);
       setProductQuantity(remaining);
       axios
-        .put(`http://localhost:5000/product/${_id}`, {
+        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
           quantity: productQuantity - deliverCount,
         })
         .then((res) => console.log(res));
@@ -51,7 +51,7 @@ const MyItem = ({ userItem }) => {
     } else {
       const totalQuantity = parseInt(productQuantity + restock);
       axios
-        .put(`http://localhost:5000/product/${_id}`, {
+        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
           quantity: parseInt(totalQuantity),
         })
         .then((res) => console.log(res));
@@ -68,7 +68,7 @@ const MyItem = ({ userItem }) => {
   };
   const deleteConfirm = () => {
     axios
-      .delete(`http://localhost:5000/product/${_id}`)
+      .delete(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`)
       .then((res) => console.log(res));
     toast("Item deleted Successfully!");
     setShow(false);

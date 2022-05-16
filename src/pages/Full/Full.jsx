@@ -10,7 +10,7 @@ const Full = () => {
   const [loading, SetLoading] = useState(false);
   useEffect(() => {
     SetLoading(true);
-    const url = "http://localhost:5000/products";
+    const url = "https://mysterious-badlands-44008.herokuapp.com/products";
     axios.get(url).then((res) => setProducts(res.data));
     setTimeout(() => {
       SetLoading(false);
@@ -18,7 +18,7 @@ const Full = () => {
   }, []);
   // console.log(products);
   return (
-    <Container className="mt-5 pb-3 w-100">
+    <Container className="mt-5 mb-5 pb-5 w-100">
       <h2 className="text-center pt-5">Full Item List</h2>
       {loading ? (
         <Loading loading={loading} />

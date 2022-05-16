@@ -11,7 +11,7 @@ const MyItems = () => {
   // console.log(user);
   const [userItems, setUserItems] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/addedByUser?email=${email}`;
+    const url = `https://mysterious-badlands-44008.herokuapp.com/addedByUser?email=${email}`;
     axios.get(url).then((res) => setUserItems(res?.data));
   }, [userItems]);
 

@@ -13,18 +13,18 @@ import { toast } from "react-toastify";
 
 const Update = ({ singleItem }) => {
   const { _id, name, quantity, description, supplier, price, img } = singleItem;
-  const [itemQuantity, setItemQuantity] = useState(quantity);
+  const [itemQuantity, setItemQuantity] = useState(parseInt(quantity));
 
   // delivery handler
   const deliverHandler = () => {
     if (itemQuantity === 0) {
       toast("Stock Out!");
     } else if (itemQuantity > 0) {
-      setItemQuantity(itemQuantity - 1);
+      setItemQuantity(parseInt(itemQuantity - 1));
     }
     axios
-      .put(`http://localhost:5000/product/${_id}`, {
-        quantity: itemQuantity - 1,
+      .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
+        quantity: parseInt(itemQuantity - 1),
       })
       .then((res) => console.log(res));
     toast("item is on the way to be delivered");
@@ -37,15 +37,16 @@ const Update = ({ singleItem }) => {
     if (restock === 0 || restock <= 0) {
       toast("Please input valid number!");
     } else {
-      setItemQuantity(parseInt(restock + itemQuantity));
+      const updatedQuantity = parseInt(restock + itemQuantity);
+      setItemQuantity(parseInt(updatedQuantity));
+      axios
+        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
+          quantity: parseInt(updatedQuantity),
+        })
+        .then((res) => console.log(res));
+      e.target.reset();
+      toast(restock + " item restocked.");
     }
-    axios
-      .put(`http://localhost:5000/product/${_id}`, {
-        quantity: restock + itemQuantity,
-      })
-      .then((res) => console.log(res));
-    e.target.reset();
-    toast(restock + " item restocked.");
   };
   return (
     <Container className="mt-5">

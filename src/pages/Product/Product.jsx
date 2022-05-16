@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Product = ({ product }) => {
   const { _id, name, supplier, price, quantity, description, img } = product;
   return (
-    <Container className="mb-5">
+    <Container className="mb-5 pb-5">
       <Card style={{ width: "18rem", height: "36rem" }}>
         <Card.Img
           className="p-2"

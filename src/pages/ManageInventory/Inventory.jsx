@@ -14,7 +14,7 @@ const Inventory = ({ inventory }) => {
   // delete confirmation
   const deleteConfirm = () => {
     axios
-      .delete(`http://localhost:5000/product/${_id}`)
+      .delete(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`)
       .then((res) => console.log(res));
     toast(name + " has been deleted successfully!");
     setShow(false);
@@ -24,7 +24,7 @@ const Inventory = ({ inventory }) => {
     setShow(false);
   };
   return (
-    <Container className="pt-3">
+    <Container className="pt-3 pb-t mb-5">
       <Table striped bordered hover className="mt-2">
         <thead>
           <tr>

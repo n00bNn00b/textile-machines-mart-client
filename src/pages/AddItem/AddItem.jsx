@@ -19,7 +19,7 @@ const AddItem = () => {
     const quantity = e.target.quantity.value;
     e.target.reset();
     // console.log(name, price, img, description, supplier, quantity);
-    const url = `http://localhost:5000/products`;
+    const url = `https://mysterious-badlands-44008.herokuapp.com/products`;
     axios
       .post(url, {
         name,

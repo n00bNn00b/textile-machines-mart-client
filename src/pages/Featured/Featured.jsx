@@ -6,7 +6,7 @@ import FeaturedItem from "./FeaturedItem/FeaturedItem";
 const Featured = () => {
   const [featureds, setFeatureds] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/products";
+    const url = "https://mysterious-badlands-44008.herokuapp.com/products";
     axios(url).then((res) => setFeatureds(res.data));
   }, []);
 

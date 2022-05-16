@@ -8,9 +8,12 @@ const useJwtToken = (user) => {
     const getUserToken = async () => {
       const userEmail = user?.user?.email;
       if (userEmail) {
-        const { data } = await axios.post("http://localhost:5000/login", {
-          userEmail,
-        });
+        const { data } = await axios.post(
+          "https://mysterious-badlands-44008.herokuapp.com/login",
+          {
+            userEmail,
+          }
+        );
         setToken(data.accessToken);
         // console.log(data.accessToken);
         localStorage.setItem("accessToken", data.accessToken);
