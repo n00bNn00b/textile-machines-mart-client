@@ -81,7 +81,7 @@ const Register = () => {
         <Button
           disabled={!agree}
           style={{ backgroundColor: "rgb(70 129 104)" }}
-          className="w-50 border-0 p-2 mx-auto d-block text-white"
+          className="w-25 border-0 p-2 mx-auto d-block text-white"
           type="submit"
         >
           Register

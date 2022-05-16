@@ -48,17 +48,20 @@ const Login = () => {
     <Container className=" mt-5">
       <h1 className="my-3 text-center pt-5">Login</h1>
       <Form onSubmit={handleLogin}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3 d-block mx-auto" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" required />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group
+          className="mb-3  d-block mx-auto"
+          controlId="formBasicPassword"
+        >
           <Form.Control type="password" placeholder="Password" required />
         </Form.Group>
 
         <Button
           style={{ backgroundColor: "rgb(70 129 104)" }}
-          className="w-50 border-0 p-2 mx-auto d-block text-white"
+          className="w-25 border-0 p-2 mx-auto d-block text-white"
           type="submit"
         >
           Login
