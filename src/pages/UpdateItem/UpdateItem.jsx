@@ -7,7 +7,7 @@ const UpdateItem = () => {
   const { id } = useParams();
   const [singleItem, setSingleItem] = useState([]);
   useEffect(() => {
-    const url = `https://mysterious-badlands-44008.herokuapp.com/product/${id}`;
+    const url = `https://textile-machines-mart-server-production.up.railway.app/product/${id}`;
     axios.get(url).then((res) => setSingleItem(res.data));
   }, [id]);
   // console.log(singleItem);

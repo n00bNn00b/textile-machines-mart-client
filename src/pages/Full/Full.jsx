@@ -10,7 +10,8 @@ const Full = () => {
   const [loading, SetLoading] = useState(false);
   useEffect(() => {
     SetLoading(true);
-    const url = "https://mysterious-badlands-44008.herokuapp.com/products";
+    const url =
+      "https://textile-machines-mart-server-production.up.railway.app/products";
     axios.get(url).then((res) => setProducts(res.data));
     setTimeout(() => {
       SetLoading(false);

@@ -9,7 +9,9 @@ const ManageInventory = () => {
 
   useEffect(() => {
     axios
-      .get("https://mysterious-badlands-44008.herokuapp.com/products")
+      .get(
+        "https://textile-machines-mart-server-production.up.railway.app/products"
+      )
       .then((res) => setInventories(res.data));
   }, [inventories]);
 

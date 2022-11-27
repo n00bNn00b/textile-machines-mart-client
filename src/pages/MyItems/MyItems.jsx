@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import MyItem from "../MyItem/MyItem";
 
@@ -10,8 +11,9 @@ const MyItems = () => {
   const email = user?.email;
   // console.log(user);
   const [userItems, setUserItems] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    const url = `https://mysterious-badlands-44008.herokuapp.com/addedByUser?email=${email}`;
+    const url = `https://textile-machines-mart-server-production.up.railway.app/addedByUser?email=${email}`;
     axios.get(url).then((res) => setUserItems(res?.data));
   }, [userItems]);
 

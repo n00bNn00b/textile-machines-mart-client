@@ -14,7 +14,9 @@ const Inventory = ({ inventory }) => {
   // delete confirmation
   const deleteConfirm = () => {
     axios
-      .delete(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`)
+      .delete(
+        `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`
+      )
       .then((res) => console.log(res));
     toast(name + " has been deleted successfully!");
     setShow(false);

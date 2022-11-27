@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       style={{ backgroundColor: "rgb(70, 129, 104)", height: "70px" }}
-      className="fixed-bottom row mt-5 pb-5 d-flex justify-content-between"
+      className=" row mt-auto pb-5 d-flex justify-content-between min-vh-100"
     >
       <div className="col-md-6 col-sm-12">
         <h6 className="ms-2 mt-2 text-white ">

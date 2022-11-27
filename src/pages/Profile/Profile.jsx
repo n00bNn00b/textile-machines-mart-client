@@ -12,14 +12,10 @@ const Profile = () => {
   }
 
   return (
-    <Container className="mt-5 text-center mb-5 pb-5">
+    <Container className="mt-5 w-50 text-center mb-5 pb-5">
       <h2 className="text-center py-5">Profile</h2>
       <Card className=" d-block mx-auto" style={{ width: "30rem" }}>
-        <Card.Img
-          className="w-75 d-block mx-auto mt-2"
-          variant="top"
-          src={avatar}
-        />
+        <Card.Img className="d-block mx-auto p-5" variant="top" src={avatar} />
         <Card.Body className="mt-3">
           <Card.Title>Profile Name: {user?.displayName}</Card.Title>
           <Card.Title>Email: {user?.email}</Card.Title>

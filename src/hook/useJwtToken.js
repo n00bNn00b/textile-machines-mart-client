@@ -9,7 +9,7 @@ const useJwtToken = (user) => {
       const userEmail = user?.user?.email;
       if (userEmail) {
         const { data } = await axios.post(
-          "https://mysterious-badlands-44008.herokuapp.com/login",
+          "https://textile-machines-mart-server-production.up.railway.app/login",
           {
             userEmail,
           }

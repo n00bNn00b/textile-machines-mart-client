@@ -28,9 +28,12 @@ const MyItem = ({ userItem }) => {
       const remaining = parseInt(productQuantity - deliverCount);
       setProductQuantity(remaining);
       axios
-        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
-          quantity: productQuantity - deliverCount,
-        })
+        .put(
+          `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
+          {
+            quantity: productQuantity - deliverCount,
+          }
+        )
         .then((res) => console.log(res));
       toast(deliverCount + " " + name + " is on delivery!");
     } else if (deliverCount === 0 || deliverCount <= 0) {
@@ -51,9 +54,12 @@ const MyItem = ({ userItem }) => {
     } else {
       const totalQuantity = parseInt(productQuantity + restock);
       axios
-        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
-          quantity: parseInt(totalQuantity),
-        })
+        .put(
+          `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
+          {
+            quantity: parseInt(totalQuantity),
+          }
+        )
         .then((res) => console.log(res));
       parseInt(setProductQuantity(parseInt(totalQuantity)));
       toast(restock + " item has been restocked!");
@@ -68,7 +74,9 @@ const MyItem = ({ userItem }) => {
   };
   const deleteConfirm = () => {
     axios
-      .delete(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`)
+      .delete(
+        `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`
+      )
       .then((res) => console.log(res));
     toast("Item deleted Successfully!");
     setShow(false);

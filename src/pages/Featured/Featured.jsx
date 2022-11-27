@@ -6,7 +6,8 @@ import FeaturedItem from "./FeaturedItem/FeaturedItem";
 const Featured = () => {
   const [featureds, setFeatureds] = useState([]);
   useEffect(() => {
-    const url = "https://mysterious-badlands-44008.herokuapp.com/products";
+    const url =
+      "https://textile-machines-mart-server-production.up.railway.app/products";
     axios(url).then((res) => setFeatureds(res.data));
   }, []);
 

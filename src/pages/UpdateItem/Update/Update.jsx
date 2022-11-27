@@ -23,9 +23,12 @@ const Update = ({ singleItem }) => {
       setItemQuantity(parseInt(itemQuantity - 1));
     }
     axios
-      .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
-        quantity: parseInt(itemQuantity - 1),
-      })
+      .put(
+        `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
+        {
+          quantity: parseInt(itemQuantity - 1),
+        }
+      )
       .then((res) => console.log(res));
     toast("item is on the way to be delivered");
   };
@@ -40,16 +43,19 @@ const Update = ({ singleItem }) => {
       const updatedQuantity = parseInt(restock + itemQuantity);
       setItemQuantity(parseInt(updatedQuantity));
       axios
-        .put(`https://mysterious-badlands-44008.herokuapp.com/product/${_id}`, {
-          quantity: parseInt(updatedQuantity),
-        })
+        .put(
+          `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
+          {
+            quantity: parseInt(updatedQuantity),
+          }
+        )
         .then((res) => console.log(res));
       e.target.reset();
       toast(restock + " item restocked.");
     }
   };
   return (
-    <Container className="mt-5">
+    <Container className="my-5">
       <h2 className="text-center py-5">Update Item</h2>
 
       <Card className="d-block mx-auto" style={{ width: "20rem" }}>
@@ -90,7 +96,7 @@ const Update = ({ singleItem }) => {
       <Button
         as={Link}
         to="/manageInventory"
-        className="d-block mx-auto border-0 mt-2 w-25 mb-5"
+        className="d-block mx-auto border-0 my-2 w-25 mb-5"
         style={{ backgroundColor: "rgb(70 129 104)" }}
       >
         Manage Inventory
