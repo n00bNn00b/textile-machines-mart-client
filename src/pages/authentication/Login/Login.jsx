@@ -42,7 +42,7 @@ const Login = () => {
 
     //
     const { data } = await axios.post(
-      "https://textile-machines-mart-server-production.up.railway.app/login",
+      "https://textile-machines-mart-server1.vercel.app/login",
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);

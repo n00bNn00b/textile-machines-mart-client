@@ -13,7 +13,7 @@ const MyItems = () => {
   const [userItems, setUserItems] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `https://textile-machines-mart-server-production.up.railway.app/addedByUser?email=${email}`;
+    const url = `https://textile-machines-mart-server1.vercel.app/addedByUser?email=${email}`;
     axios.get(url).then((res) => setUserItems(res?.data));
   }, [userItems]);
 

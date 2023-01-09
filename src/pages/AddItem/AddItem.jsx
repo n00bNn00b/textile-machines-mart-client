@@ -19,7 +19,7 @@ const AddItem = () => {
     const quantity = e.target.quantity.value;
     e.target.reset();
     // console.log(name, price, img, description, supplier, quantity);
-    const url = `https://textile-machines-mart-server-production.up.railway.app/products`;
+    const url = `https://textile-machines-mart-server1.vercel.app/products`;
     axios
       .post(url, {
         name,

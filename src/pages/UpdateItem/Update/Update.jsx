@@ -23,12 +23,9 @@ const Update = ({ singleItem }) => {
       setItemQuantity(parseInt(itemQuantity - 1));
     }
     axios
-      .put(
-        `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
-        {
-          quantity: parseInt(itemQuantity - 1),
-        }
-      )
+      .put(`https://textile-machines-mart-server1.vercel.app/product/${_id}`, {
+        quantity: parseInt(itemQuantity - 1),
+      })
       .then((res) => console.log(res));
     toast("item is on the way to be delivered");
   };
@@ -44,7 +41,7 @@ const Update = ({ singleItem }) => {
       setItemQuantity(parseInt(updatedQuantity));
       axios
         .put(
-          `https://textile-machines-mart-server-production.up.railway.app/product/${_id}`,
+          `https://textile-machines-mart-server1.vercel.app/product/${_id}`,
           {
             quantity: parseInt(updatedQuantity),
           }

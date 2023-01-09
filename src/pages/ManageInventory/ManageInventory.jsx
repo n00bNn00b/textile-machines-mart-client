@@ -9,9 +9,7 @@ const ManageInventory = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://textile-machines-mart-server-production.up.railway.app/products"
-      )
+      .get("https://textile-machines-mart-server1.vercel.app/products")
       .then((res) => setInventories(res.data));
   }, [inventories]);
 

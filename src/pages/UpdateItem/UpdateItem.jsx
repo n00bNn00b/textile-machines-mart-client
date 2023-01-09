@@ -7,7 +7,7 @@ const UpdateItem = () => {
   const { id } = useParams();
   const [singleItem, setSingleItem] = useState([]);
   useEffect(() => {
-    const url = `https://textile-machines-mart-server-production.up.railway.app/product/${id}`;
+    const url = `https://textile-machines-mart-server1.vercel.app/product/${id}`;
     axios.get(url).then((res) => setSingleItem(res.data));
   }, [id]);
   // console.log(singleItem);

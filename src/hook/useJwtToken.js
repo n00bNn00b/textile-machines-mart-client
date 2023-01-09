@@ -9,7 +9,7 @@ const useJwtToken = (user) => {
       const userEmail = user?.user?.email;
       if (userEmail) {
         const { data } = await axios.post(
-          "https://textile-machines-mart-server-production.up.railway.app/login",
+          "https://textile-machines-mart-server1.vercel.app/login",
           {
             userEmail,
           }
