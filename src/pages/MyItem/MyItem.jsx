@@ -29,7 +29,7 @@ const MyItem = ({ userItem }) => {
       setProductQuantity(remaining);
       axios
         .put(
-          `https://textile-machines-mart-server1.vercel.app/product/${_id}`,
+          `https://textile-machines-mart-server.onrender.com/product/${_id}`,
           {
             quantity: productQuantity - deliverCount,
           }
@@ -55,7 +55,7 @@ const MyItem = ({ userItem }) => {
       const totalQuantity = parseInt(productQuantity + restock);
       axios
         .put(
-          `https://textile-machines-mart-server1.vercel.app/product/${_id}`,
+          `https://textile-machines-mart-server.onrender.com/product/${_id}`,
           {
             quantity: parseInt(totalQuantity),
           }
@@ -74,7 +74,9 @@ const MyItem = ({ userItem }) => {
   };
   const deleteConfirm = () => {
     axios
-      .delete(`https://textile-machines-mart-server1.vercel.app/product/${_id}`)
+      .delete(
+        `https://textile-machines-mart-server.onrender.com/product/${_id}`
+      )
       .then((res) => console.log(res));
     toast("Item deleted Successfully!");
     setShow(false);

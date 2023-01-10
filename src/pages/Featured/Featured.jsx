@@ -6,7 +6,7 @@ import FeaturedItem from "./FeaturedItem/FeaturedItem";
 const Featured = () => {
   const [featureds, setFeatureds] = useState([]);
   useEffect(() => {
-    const url = "https://textile-machines-mart-server1.vercel.app/products";
+    const url = "https://textile-machines-mart-server.onrender.com/products";
     axios(url).then((res) => setFeatureds(res.data));
   }, []);
 

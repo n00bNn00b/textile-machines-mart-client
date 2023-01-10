@@ -10,7 +10,7 @@ const Full = () => {
   const [loading, SetLoading] = useState(false);
   useEffect(() => {
     SetLoading(true);
-    const url = "https://textile-machines-mart-server1.vercel.app/products";
+    const url = "https://textile-machines-mart-server.onrender.com/products";
     axios.get(url).then((res) => setProducts(res.data));
     setTimeout(() => {
       SetLoading(false);

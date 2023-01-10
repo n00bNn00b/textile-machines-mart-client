@@ -23,7 +23,7 @@ const Update = ({ singleItem }) => {
       setItemQuantity(parseInt(itemQuantity - 1));
     }
     axios
-      .put(`https://textile-machines-mart-server1.vercel.app/product/${_id}`, {
+      .put(`https://textile-machines-mart-server.onrender.com/product/${_id}`, {
         quantity: parseInt(itemQuantity - 1),
       })
       .then((res) => console.log(res));
@@ -41,7 +41,7 @@ const Update = ({ singleItem }) => {
       setItemQuantity(parseInt(updatedQuantity));
       axios
         .put(
-          `https://textile-machines-mart-server1.vercel.app/product/${_id}`,
+          `https://textile-machines-mart-server.onrender.com/product/${_id}`,
           {
             quantity: parseInt(updatedQuantity),
           }
