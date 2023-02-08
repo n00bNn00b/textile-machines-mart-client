@@ -53,8 +53,10 @@ const Inventory = ({ inventory }) => {
               <Button
                 onClick={deleteHandler}
                 className="bg-danger border-0  rounded-pill d-block mx-auto me-0"
+                size="sm"
               >
                 <img
+                  style={{ width: "15px", height: "30px" }}
                   src="https://www.svgrepo.com/show/378902/trash-bin.svg"
                   alt=""
                 />
