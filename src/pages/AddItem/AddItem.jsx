@@ -49,7 +49,12 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="price">
           <Form.Label>Price (USD)</Form.Label>
-          <Form.Control type="number" placeholder="i.e.: 100" required />
+          <Form.Control
+            type="number"
+            placeholder="i.e.: 100"
+            min="1"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="img">
           <Form.Label>Image URL</Form.Label>
@@ -78,7 +83,7 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="quantity">
           <Form.Label>Quantity</Form.Label>
-          <Form.Control type="number" placeholder="i.e.: 10" required />
+          <Form.Control type="number" placeholder="i.e.: 10" min="1" required />
         </Form.Group>
 
         <Button

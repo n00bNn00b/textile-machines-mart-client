@@ -34,7 +34,7 @@ const Update = ({ singleItem }) => {
   const restockHandler = (e) => {
     e.preventDefault();
     const restock = parseInt(e.target.restock.value);
-    if (restock === 0 || restock <= 0) {
+    if (restock === 0 || restock <= 0 || isNaN(restock)) {
       toast("Please input valid number!");
     } else {
       const updatedQuantity = parseInt(restock + itemQuantity);
